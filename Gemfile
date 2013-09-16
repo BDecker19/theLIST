@@ -9,7 +9,6 @@ gem 'less-rails'
 gem 'wicked'
 gem 'pry'
 gem 'pry-nav'
-gem 'protected_attributes'
 gem 'rails_12factor', group: :production
 
 

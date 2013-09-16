@@ -9,7 +9,8 @@ class ApplicationController < ActionController::Base
 	end
 
 	def test
-		render :test_page
+		# binding.pry
+    # render :test_page
 	end
 
 
