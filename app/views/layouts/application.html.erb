@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TheLIST</title>
+	<%= stylesheet_link_tag "application", :media => "all" %>
+	<%= javascript_include_tag "application" %>
+	<%= csrf_meta_tags %>
+</head>
+<div class="container">
+	<div>
+		<%= render 'layouts/user_header' %>
+		<h3 class="muted"><%= link_to "theList", root_path %></h3>
+		<h5 class="muted">A place for NYC startups to find the resources they need</h5>
+	</div>
+	<hr />
+	<%= yield %>
+</div>
+</html>

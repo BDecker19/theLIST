@@ -1,0 +1,42 @@
+<!-- ******USER SIGNED IN****** -->
+
+<!-- %$% need to add something here that checks if user is signed in AND profile complete.  otherwise will redirect to appropriate section of form process -->
+
+<div class="jumbotron">
+  <% if user_signed_in? %>
+  <h1>Welcome back, trusted user!</h1>
+  <p class="lead">
+    You have signed in!  If this were a real app some sweet conent
+    would go here.  But it's just a test.  You might want to sign out now.
+  </p>
+  <%= link_to "Sign Out", destroy_user_session_path, :method => :delete, :class => 'btn btn-large btn-danger' %>
+  
+
+
+  <!-- ******USER NOT SIGNED IN****** -->
+  <% else %>
+  <h1>Welcome to theLIST</h1>
+  <p class="lead">
+    Please choose from the below or sign in above
+  </p>
+
+      <!-- Call to Action -->
+  <div id="CtA">
+    <div class="row-fluid">
+      <div class="offset3 span6">
+        <%= link_to new_user_registration_path, :class => "btn btn-block btn-lg btn-primary" do %> 
+        <span>I'm looking for services</span>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="row-fluid">
+     <div class="offset3 span6">
+      <%= link_to new_user_registration_path, :class => "btn btn-block btn-lg btn-primary" do %> 
+        <span>I'm offering services</span>
+      <% end %>
+    </div>
+  </div>
+
+  <% end %>
+</div>
