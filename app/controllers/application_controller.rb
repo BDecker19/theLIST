@@ -14,11 +14,11 @@ class ApplicationController < ActionController::Base
 
 
   	def after_sign_in_path_for(resource)
-  		if current_user.profile_complete == true
-  			redirect_to root_path
-  		else 
-  			user_steps_path
-  		end
-	end
+    		if current_user.profile_complete == true
+    			redirect_to root_path
+    		else 
+    			user_steps_path
+    		end
+	  end
 
 end
