@@ -9,8 +9,12 @@ include Wicked::Wizard
 
   	def update
 	  @user = current_user
-	  @user.attributes = params[:user]
+	  @user.attributes = user_params
 	  render_wizard @user
 	end
+
+		def user_params
+	        params[:user].permit(:name, :date_of_birth, :bio)
+	    end
 
 end
