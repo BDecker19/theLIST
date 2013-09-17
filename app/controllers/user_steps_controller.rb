@@ -13,8 +13,19 @@ include Wicked::Wizard
 	  render_wizard @user
 	end
 
-		def user_params
-	        params[:user].permit(:name, :date_of_birth, :bio)
-	    end
+
+	# PRIVATE METHODS
+	private
+
+	def user_params
+        params[:user].permit(:name, :date_of_birth, :bio)
+    end
+
+	def redirect_to_finish_wizard (options = nil)
+	  current_user.profile_complete = true;
+	  current_user.save
+	  redirect_to root_url, notice: "Thanks for signing up."
+	end
+
 
 end
